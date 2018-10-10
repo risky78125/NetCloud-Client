@@ -1,3 +1,8 @@
-<p>
-  main works!
-</p>
+<div>
+  <div *ngIf="currentMenu.path !== 'index'" class="header">
+    <img src="/src/assets/images/logo.png" alt="logo" class="left"/>
+    <a href="#">[退出]</a>
+  </div>
+  <app-navigation-menu (menuSelect)="onMenuSelect($event)"></app-navigation-menu>
+  <router-outlet></router-outlet>
+</div>

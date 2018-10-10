@@ -1,0 +1,5 @@
+.index {
+  width: 100%;
+  height: 800px;
+  background: #00629f url(/src/assets/images/index_bg.jpg) no-repeat center top;
+}

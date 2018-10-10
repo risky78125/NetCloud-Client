@@ -1,0 +1,146 @@
+.index_nav
+{
+  width: 100%;
+  height: 91px;
+  position: absolute;
+  bottom: 0;
+}
+.index_nav li
+{
+  list-style: none;
+  margin-top: 10px;
+  float: left;
+  padding: 0 14px;
+}
+.index_nav a
+{
+  display: block;
+  width: 68px;
+  height: 77px;
+  overflow: hidden;
+  float: left;
+}
+
+.index_menu
+{
+  width: 960px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.nav
+{
+  width: 100%;
+  height: 91px;
+  overflow: hidden;
+}
+.menu
+{
+  overflow: hidden;
+  width: 960px;
+  margin: 5px auto 0;
+}
+.nav li
+{
+  list-style: none;
+  float: left;
+  padding: 0 14px;
+}
+.nav a
+{
+  display: block;
+  width: 68px;
+  height: 77px;
+  overflow: hidden;
+  float: left;
+}
+
+.index_nav
+{
+  background: url(/src/assets/images/index_navi_bg.png) repeat-x;
+}
+
+.nav
+{
+  background: url(/src/assets/images/navigation.png) repeat-x;
+}
+.index_on
+{
+  background: url(/src/assets/images/index_on.png) no-repeat;
+}
+.index_off
+{
+  background: url(/src/assets/images/index_out.png) no-repeat;
+}
+.role_on
+{
+  background: url(/src/assets/images/role_on.png) no-repeat;
+}
+.role_off
+{
+  background: url(/src/assets/images/role_out.png) no-repeat;
+}
+.admin_on
+{
+  background: url(/src/assets/images/admin_on.png) no-repeat;
+}
+.admin_off
+{
+  background: url(/src/assets/images/admin_out.png) no-repeat;
+}
+.fee_on
+{
+  background: url(/src/assets/images/fee_on.png) no-repeat;
+}
+.fee_off
+{
+  background: url(/src/assets/images/fee_out.png) no-repeat;
+}
+.account_on
+{
+  background: url(/src/assets/images/account_on.png) no-repeat;
+}
+.account_off
+{
+  background: url(/src/assets/images/account_out.png) no-repeat;
+}
+.service_on
+{
+  background: url(/src/assets/images/service_on.png) no-repeat;
+}
+.service_off
+{
+  background: url(/src/assets/images/service_out.png) no-repeat;
+}
+.bill_on
+{
+  background: url(/src/assets/images/bill_on.png) no-repeat;
+}
+.bill_off
+{
+  background: url(/src/assets/images/bill_out.png) no-repeat;
+}
+.report_on
+{
+  background: url(/src/assets/images/report_on.png) no-repeat;
+}
+.report_off
+{
+  background: url(/src/assets/images/report_out.png) no-repeat;
+}
+.information_on
+{
+  background: url(/src/assets/images/information_on.png) no-repeat;
+}
+.information_off
+{
+  background: url(/src/assets/images/information_out.png) no-repeat;
+}
+.password_on
+{
+  background: url(/src/assets/images/password_on.png) no-repeat;
+}
+.password_off
+{
+  background: url(/src/assets/images/password_out.png) no-repeat;
+}

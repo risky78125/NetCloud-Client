@@ -1,0 +1,20 @@
+<div id="main">
+  <dx-button type="default" text="增加" (onClick)="onAddClick()"></dx-button>
+  <dx-data-grid id="gridContainer"
+                [dataSource]="dataSource"
+                [showBorders]="true">
+    <dxi-column dataField="OrderNumber" caption="角色Id"></dxi-column>
+    <dxi-column dataField="OrderDate" caption="角色名称"></dxi-column>
+    <dxi-column dataField="StoreCity" caption="拥有的权限"></dxi-column>
+    <dxi-column ></dxi-column>
+    <dxo-remote-operations
+      [sorting]="false"
+      [paging]="true">
+    </dxo-remote-operations>
+    <dxo-paging [pageSize]="12"></dxo-paging>
+    <dxo-pager
+      [showPageSizeSelector]="true"
+      [allowedPageSizes]="[8, 12, 20]"
+    ></dxo-pager>
+  </dx-data-grid>
+</div>

@@ -1,1 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
+body, p, div, ul, ol, li, dl, dd, dt, h1, h2, h3, h4, h5, h6, form, input, select, label, table, tr, td, th, thead, tbody, tfoot {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #0063a0 url(./assets/images/body_bg.png);
+}
+
+body {
+  font-size: 12px;
+  font-family: Tahoma, Geneva, sans-serif;
+  background-position: top;
+  background-repeat: repeat-x;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+#main {
+  background: #e8f3f8;
+  border: 5px solid #8ac1db;
+  min-height: 410px;
+  width: 950px;
+  padding: 5px;
+  margin-top: 5px;
+  max-height: 450px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+input.btn_modify, input.btn_delete, input.btn_start, input.btn_pause {
+  margin-left: 3px;
+  width: 55px;
+  cursor: pointer;
+}
+
+input.btn_search, input.btn_search:hover, input.btn_search:active {
+  background: url(./assets/images/search.png) no-repeat;
+  color: #0a97c9;
+  border: 0;
+}
+
+input.btn_search_large, input.btn_search_large:hover, input.btn_search_large:active {
+  background: url(./assets/images/search_large.png) no-repeat;
+  color: #0a97c9;
+  border: 0;
+}
+
+input.btn_search:hover, input.btn_search_large:hover {
+  color: #0a97ff;
+}
+
+input.btn_add, input.btn_add:hover {
+  background: url(./assets/images/btn_bg.png) no-repeat left top;
+  color: #fff;
+  border: 0;
+}
+
+input.btn_modify, input.btn_modify:hover {
+  background: url(./assets/images/modification.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_delete, input.btn_delete:hover {
+  background: url(./assets/images/delete.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_start, input.btn_start:hover {
+  background: url(./assets/images/start.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_pause, input.btn_pause:hover {
+  background: url(./assets/images/pause.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_save {
+  background: url(./assets/images/form_btn.png) no-repeat;
+  color: #FFF;
+  border: 0;
+}
+
+input.btn_save:hover {
+  background: url(./assets/images/form_btn_on.png) no-repeat;
+}
+
+input.sort_asc {
+  background: url(./assets/images/up.png) no-repeat;
+  color: #FFF;
+}
+
+input.sort_desc {
+  background: url(./assets/images/down.png) no-repeat;
+  color: #FFF;
+}
+
+input.sort_asc, input.sort_desc, input.sort_asc:hover, input.sort_desc:hover {
+  border: 0;
+}
+
+

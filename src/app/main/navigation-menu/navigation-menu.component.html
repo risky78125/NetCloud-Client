@@ -1,0 +1,9 @@
+<!--<div class="index_nav">-->
+<div [ngClass]="lastMenu.path === 'index' ? 'index_nav' : 'nav'">
+  <!--<ul id="index_menu">-->
+  <ul [ngClass]="lastMenu.path === 'index' ? 'index_menu' : 'menu'">
+    <li *ngFor="let menu of menus">
+      <a routerLink="{{menu.path}}" [ngClass]="menu.path + (menu.state ? '_on' : '_off')" (click)="onMenuSelected(menu)"></a>
+    </li>
+  </ul>
+</div>
