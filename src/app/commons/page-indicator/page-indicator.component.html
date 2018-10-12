@@ -1,0 +1,10 @@
+<div>
+  <div id="pages">
+    <a href="javascript:void(0)" (click)="onPrePage()">上一页</a>
+    <a href="javascript:void(0)"
+       *ngFor="let indicator of indicators;"
+       (click)="onIndicatorClick(indicator)"
+       [ngClass]="indicator.isSelected ? 'current_page' : ''">{{indicator.pageIndex}}</a>
+    <a href="javascript:void(0)" (click)="onNextPage()">下一页</a>
+  </div>
+</div>

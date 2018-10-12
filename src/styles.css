@@ -37,6 +37,45 @@ ul, ol {
   position: relative;
 }
 
+#data {
+  min-height: 330px;
+}
+
+#datalist {
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+#datalist td {
+  height: 32px;
+  line-height: 32px;
+}
+
+#datalist th {
+  font-weight: bold;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+}
+
+#datalist {
+  background-color: #fff;
+}
+
+#datalist td {
+  border: #CCC solid 1px;
+}
+
+#datalist tr:hover {
+  background-color: #f7f9fd;
+}
+
+#datalist th {
+  background: #fbedce;
+  border: #CCC solid 1px;
+}
+
 input.btn_modify, input.btn_delete, input.btn_start, input.btn_pause {
   margin-left: 3px;
   width: 55px;

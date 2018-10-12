@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import CustomStore from 'devextreme/data/custom_store';
+import {Router} from '@angular/router';
 // import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -12,7 +13,7 @@ export class RoleComponent implements OnInit {
 
   dataSource: any = {};
 
-  constructor() {
+  constructor(private router: Router) {
     // this.dataSource.store = new CustomStore({
     //   load: function (loadOptions: any) {
     //     let params = '?';
@@ -44,7 +45,7 @@ export class RoleComponent implements OnInit {
   }
 
   onAddClick() {
-
+    this.router.navigateByUrl('main/role/add');
   }
 
 }
