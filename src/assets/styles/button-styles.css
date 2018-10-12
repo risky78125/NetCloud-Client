@@ -1,0 +1,76 @@
+
+input.btn_modify, input.btn_delete, input.btn_start, input.btn_pause {
+  margin-left: 3px;
+  width: 55px;
+  cursor: pointer;
+}
+
+input.btn_search, input.btn_search:hover, input.btn_search:active {
+  background: url(/src/assets/images/search.png) no-repeat;
+  color: #0a97c9;
+  border: 0;
+}
+
+input.btn_search_large, input.btn_search_large:hover, input.btn_search_large:active {
+  background: url(/src/assets/images/search_large.png) no-repeat;
+  color: #0a97c9;
+  border: 0;
+}
+
+input.btn_search:hover, input.btn_search_large:hover {
+  color: #0a97ff;
+}
+
+input.btn_add, input.btn_add:hover {
+  background: url(/src/assets/images/btn_bg.png) no-repeat left top;
+  color: #fff;
+  border: 0;
+}
+
+input.btn_modify, input.btn_modify:hover {
+  background: url(/src/assets/images/modification.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_delete, input.btn_delete:hover {
+  background: url(/src/assets/images/delete.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_start, input.btn_start:hover {
+  background: url(/src/assets/images/start.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_pause, input.btn_pause:hover {
+  background: url(/src/assets/images/pause.png) no-repeat left center;
+  color: #000;
+  border: 0;
+}
+
+input.btn_save {
+  background: url(/src/assets/images/form_btn.png) no-repeat;
+  color: #FFF;
+  border: 0;
+}
+
+input.btn_save:hover {
+  background: url(/src/assets/images/form_btn_on.png) no-repeat;
+}
+
+input.sort_asc {
+  background: url(/src/assets/images/up.png) no-repeat;
+  color: #FFF;
+}
+
+input.sort_desc {
+  background: url(/src/assets/images/down.png) no-repeat;
+  color: #FFF;
+}
+
+input.sort_asc, input.sort_desc, input.sort_asc:hover, input.sort_desc:hover {
+  border: 0;
+}

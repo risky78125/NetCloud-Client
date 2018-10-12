@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import CustomStore from 'devextreme/data/custom_store';
 import {Router} from '@angular/router';
+
 // import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -13,32 +12,10 @@ export class RoleComponent implements OnInit {
 
   dataSource: any = {};
 
+  totalCount = 8;
+
   constructor(private router: Router) {
-    // this.dataSource.store = new CustomStore({
-    //   load: function (loadOptions: any) {
-    //     let params = '?';
-    //
-    //     params += 'skip=' + loadOptions.skip || 0;
-    //     params += '&take=' + loadOptions.take || 12;
-    //
-    //     if (loadOptions.sort) {
-    //       params += '&orderby=' + loadOptions.sort[0].selector;
-    //       if (loadOptions.sort[0].desc) {
-    //         params += ' desc';
-    //       }
-    //     }
-    //     return http.get('https://js.devexpress.com/Demos/WidgetsGallery/data/orderItems' + params)
-    //       .toPromise()
-    //       .then((data: any) => {
-    //         return {
-    //           data: data.items,
-    //           totalCount: data.totalCount
-    //         };
-    //       })
-    //       .catch(error => {
-    //       });
-    //   }
-    // });
+
   }
 
   ngOnInit() {
@@ -46,6 +23,10 @@ export class RoleComponent implements OnInit {
 
   onAddClick() {
     this.router.navigateByUrl('main/role/add');
+  }
+
+  onPageSelected(pageIndex) {
+    console.log(pageIndex);
   }
 
 }

@@ -1,0 +1,24 @@
+body, p, div, ul, ol, li, dl, dd, dt, h1, h2, h3, h4, h5, h6, form, input, select, label, table, tr, td, th, thead, tbody, tfoot {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #0063a0 url(/src/assets/images/body_bg.png);
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 12px;
+  font-family: Tahoma, Geneva, sans-serif;
+  background-position: top;
+  background-repeat: repeat-x;
+}
+
+ul, ol {
+  list-style: none;
+}

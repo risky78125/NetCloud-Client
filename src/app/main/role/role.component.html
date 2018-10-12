@@ -2,8 +2,7 @@
   <div class="table-search">
     <dx-button style="margin-right: 10px" type="default" text="增加" (onClick)="onAddClick()"></dx-button>
   </div>
-  <div class="table-main">
-    <div id="data">
+  <div class="data">
       <table id="datalist">
         <tr>
           <th>角色 ID</th>
@@ -48,8 +47,7 @@
           </td>
         </tr>
       </table>
-    </div>
     <!--分页-->
-    <app-page-indicator></app-page-indicator>
   </div>
+  <app-page-indicator [totalCount]="totalCount" (pageSelected)="onPageSelected($event)"></app-page-indicator>
 </div>
