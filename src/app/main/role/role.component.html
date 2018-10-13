@@ -12,11 +12,11 @@
         </tr>
         <tr *ngFor="let role of dataSource">
           <td>{{role.roleId}}</td>
-          <td>{{role.name}}</td>
+          <td>{{role.roleName}}</td>
           <td>{{role.moduleNames}}</td>
           <td>
-            <input type="button" value="修改" class="btn_modify" (click)="modifyRole(role.roleId)"/>
-            <input type="button" value="删除" class="btn_delete" (click)="deleteRole(role.roleId);"/>
+            <input type="button" value="修改" class="btn_modify" (click)="onModifyRole(role)"/>
+            <input type="button" value="删除" class="btn_delete" (click)="onDeleteRole(role);"/>
           </td>
         </tr>
       </table>

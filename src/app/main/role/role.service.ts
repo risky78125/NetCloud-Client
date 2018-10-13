@@ -18,4 +18,8 @@ export class RoleService {
         map(resp => resp.data)
       );
   }
+
+  deleteRoleById(roleId: any) {
+    return this.httpManager.post(`role/delete/${roleId}`);
+  }
 }

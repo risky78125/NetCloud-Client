@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {RoleService} from './role.service';
+import {filter, mergeMap} from 'rxjs/operators';
+import {ToastUtils} from '../../commons/toast-utils';
+import {DialogUtils} from '../../commons/DialogUtils';
+
 
 @Component({
   selector: 'app-role',
@@ -12,6 +16,8 @@ export class RoleComponent implements OnInit {
   dataSource: RoleBean[];
 
   totalCount = 1;
+
+  currentPage = 1;
 
   constructor(private router: Router, private roleService: RoleService) {
   }
@@ -28,7 +34,23 @@ export class RoleComponent implements OnInit {
     this.findRoles(pageIndex);
   }
 
+  onModifyRole(role) {
+    this.router.navigateByUrl('main/role/modify');
+  }
+
+  onDeleteRole(role) {
+    DialogUtils.confirm('确定要删除?', role.roleName)
+      .pipe(
+        mergeMap(() => this.roleService.deleteRoleById(role.roleId)),
+        filter(resp => resp.status)
+      ).subscribe(resp => {
+      ToastUtils.toastSuccess('删除成功');
+      this.findRoles(this.currentPage);
+    });
+  }
+
   private findRoles(page) {
+    this.currentPage = page;
     this.roleService.getRolesByPage(page)
       .subscribe(data => {
         this.totalCount = Math.ceil(data.totalSize / data.pageSize);
@@ -41,7 +63,7 @@ export class RoleComponent implements OnInit {
 class RoleBean {
   constructor(
     public roleId: number,
-    public name: string,
+    public roleName: string,
     public moduleNames: string) {
   }
 }
