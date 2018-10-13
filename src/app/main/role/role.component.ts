@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {HttpManager} from '../../http-manager/http-manager.service';
+import {RoleService} from './role.service';
 
 @Component({
   selector: 'app-role',
@@ -9,50 +9,15 @@ import {HttpManager} from '../../http-manager/http-manager.service';
 })
 export class RoleComponent implements OnInit {
 
-  dataSource: RoleBean[] = [
-    {
-      roleId: 1,
-      roleName: '超级管理员',
-      moduleNames: '角色管理、管理员管理、资费管理、账务账号、业务账号、账单、报表'
-    },
-    {
-      roleId: 2,
-      roleName: '管理员',
-      moduleNames: '角色管理、资费管理、账务账号、业务账号、账单、报表'
-    },
-    {
-      roleId: 3,
-      roleName: '资费管理员',
-      moduleNames: '资费管理'
-    },
-    {
-      roleId: 4,
-      roleName: '账务账号管理员',
-      moduleNames: '管理员管理'
-    },
-    {
-      roleId: 5,
-      roleName: '业务账号管理员',
-      moduleNames: '角色管理、资费管理'
-    },
-    {
-      roleId: 6,
-      roleName: '账单管理员',
-      moduleNames: '角色管理、管理员管理'
-    },
-    {
-      roleId: 7,
-      roleName: '报表管理员',
-      moduleNames: '管理员管理、资费管理'
-    }
-  ];
+  dataSource: RoleBean[];
 
-  totalCount = 8;
+  totalCount = 1;
 
-  constructor(private router: Router, private service: HttpManager) {
+  constructor(private router: Router, private roleService: RoleService) {
   }
 
   ngOnInit() {
+    this.findRoles(1);
   }
 
   onAddClick() {
@@ -60,7 +25,15 @@ export class RoleComponent implements OnInit {
   }
 
   onPageSelected(pageIndex) {
-    console.log(pageIndex);
+    this.findRoles(pageIndex);
+  }
+
+  private findRoles(page) {
+    this.roleService.getRolesByPage(page)
+      .subscribe(data => {
+        this.totalCount = Math.ceil(data.totalSize / data.pageSize);
+        this.dataSource = data.items;
+      });
   }
 
 }
@@ -68,7 +41,7 @@ export class RoleComponent implements OnInit {
 class RoleBean {
   constructor(
     public roleId: number,
-    public roleName: string,
+    public name: string,
     public moduleNames: string) {
   }
 }

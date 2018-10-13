@@ -10,6 +10,7 @@ export class ResultWrapper {
 export class DataBean {
   public constructor(
     public totalSize: number,
+    public pageSize: number,
     public items: any[]
   ) {}
 }
