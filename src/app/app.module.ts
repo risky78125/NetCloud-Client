@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {DxButtonModule} from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,9 +13,10 @@ import {HttpClient} from '@angular/common/http';
   imports: [
     BrowserModule,
     DxButtonModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [HttpClient],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

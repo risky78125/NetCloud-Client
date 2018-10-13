@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-
-// import 'rxjs/add/operator/toPromise';
+import {HttpManager} from '../../http-manager/http-manager.service';
 
 @Component({
   selector: 'app-role',
@@ -50,8 +49,7 @@ export class RoleComponent implements OnInit {
 
   totalCount = 8;
 
-  constructor(private router: Router) {
-
+  constructor(private router: Router, private service: HttpManager) {
   }
 
   ngOnInit() {
@@ -71,5 +69,6 @@ class RoleBean {
   constructor(
     public roleId: number,
     public roleName: string,
-    public moduleNames: string) {}
+    public moduleNames: string) {
+  }
 }
