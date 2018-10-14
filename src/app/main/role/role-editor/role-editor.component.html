@@ -8,8 +8,14 @@
     <div class="input_info_high">
       <div class="input_info_scroll">
         <ul>
-          <li *ngFor="let module of role.modules">
-            <input type="checkbox" name="moduleIds"  value="{{module.moduleId}}" [(ngModel)]="module.isSelected"/>{{module.moduleName}}
+          <li *ngFor="let module of role.moduleList">
+            <label>
+              <input type="checkbox"
+                     name="moduleIds"
+                     value="{{module.moduleId}}"
+                     [checked]="module.selected"
+                     (change)="module.selected = !module.selected"/>{{module.moduleName}}
+            </label>
           </li>
         </ul>
       </div>

@@ -3,7 +3,7 @@ export class ResultWrapper {
     public status: boolean,
     public code: number,
     public message: string,
-    public data: DataBean
+    public data: any
   ) {}
 }
 

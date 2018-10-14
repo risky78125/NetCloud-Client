@@ -7,6 +7,6 @@ export class ToastUtils {
   }
 
   static toastFailed(message: string) {
-    notify(message, 'danger', 600);
+    notify(message, 'error', 600);
   }
 }

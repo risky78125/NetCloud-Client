@@ -6,7 +6,7 @@ import {RoleEditorComponent} from './role-editor/role-editor.component';
 const routes: Routes = [
   {path: '', component: RoleComponent},
   {path: 'add', component: RoleEditorComponent},
-  {path: 'modify', component: RoleEditorComponent}
+  {path: 'modify/:roleId', component: RoleEditorComponent}
 ];
 
 @NgModule({

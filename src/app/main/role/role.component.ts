@@ -35,7 +35,7 @@ export class RoleComponent implements OnInit {
   }
 
   onModifyRole(role) {
-    this.router.navigateByUrl('main/role/modify');
+    this.router.navigateByUrl(`main/role/modify/${role.roleId}`);
   }
 
   onDeleteRole(role) {

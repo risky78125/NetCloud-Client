@@ -30,7 +30,15 @@ export class RoleService {
       );
   }
 
-  addRoleWithModuleIds(role: any): Observable<ResultWrapper> {
+  addRoleWithModules(role: any): Observable<ResultWrapper> {
     return this.httpManager.post('role/add', role);
+  }
+
+  findRoleDetailsById(roleId: string): Observable<ResultWrapper> {
+    return this.httpManager.get(`role/details/${roleId}`);
+  }
+
+  updateRoleWithModules(role: any): Observable<ResultWrapper> {
+    return this.httpManager.post('role/modify', role);
   }
 }

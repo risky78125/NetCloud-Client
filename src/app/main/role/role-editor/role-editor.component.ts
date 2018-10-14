@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
 import {RoleService} from '../role.service';
 import {from, of} from 'rxjs';
 import {filter, map, mergeMap, toArray} from 'rxjs/operators';
-import {fromArray} from 'rxjs/internal/observable/fromArray';
 import {ToastUtils} from '../../../commons/toast-utils';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-role-update',
@@ -13,36 +12,73 @@ import {ToastUtils} from '../../../commons/toast-utils';
 })
 export class RoleEditorComponent implements OnInit {
 
-  role: any = {roleName: ''};
+  role: Role = {
+    roleName: '',
+    moduleList: []
+  };
 
   // modules: any[] = [];
 
-  constructor(private roleService: RoleService) {
+  constructor(
+    private roleService: RoleService,
+    private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(params => {
+      const roleId = params.get('roleId');
+      if (roleId) {
+        this.roleService.findRoleDetailsById(roleId)
+          .subscribe(resp => {
+            if (resp.status) {
+              this.role = resp.data;
+            }
+          });
+      } else {
+        this.role.roleName = '';
+        this.roleService.findAllModules()
+          .subscribe(items => this.role.moduleList = items);
+      }
+    });
   }
 
   ngOnInit() {
-    this.roleService.findAllModules()
-      .subscribe(items => this.role.modules = items);
   }
 
   onSubmit(e) {
     e.preventDefault();
-    const modules: any[] = this.role.modules;
+    console.log(this.role);
+    const modules: Module[] = this.role.moduleList;
     from(modules)
       .pipe(
-        filter(module => module.isSelected),
+        filter(module => module.selected),
         map(module => module.moduleId),
         toArray(),
-        mergeMap(moduleIds => of({roleName: this.role.roleName, moduleIds: moduleIds})),
-        mergeMap(role => this.roleService.addRoleWithModuleIds(role))
+        mergeMap(moduleIds => of({roleId: this.role.roleId, roleName: this.role.roleName, moduleIds: moduleIds})),
+        mergeMap(role => {
+          if (role.roleId) {
+            return this.roleService.updateRoleWithModules(role);
+          } else {
+             return this.roleService.addRoleWithModules(role);
+          }
+        })
       )
       .subscribe((resp) => {
         if (resp.status) {
-          ToastUtils.toastSuccess('角色新增成功');
+          ToastUtils.toastSuccess(resp.message);
         } else {
-          ToastUtils.toastFailed('角色新增失败');
+          ToastUtils.toastFailed(resp.message);
         }
       });
   }
 
+}
+
+class Role {
+  roleId?: number;
+  roleName: string;
+  moduleList: Module[];
+}
+
+class Module {
+  moduleId?: number;
+  moduleName?: string;
+  selected?: boolean;
 }
