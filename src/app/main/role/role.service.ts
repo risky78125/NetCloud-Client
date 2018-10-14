@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpManager} from '../../http-manager/http-manager.service';
 import {Observable} from 'rxjs';
-import {DataBean} from '../../http-manager/beans';
+import {DataBean, ResultWrapper} from '../../http-manager/beans';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -12,14 +12,25 @@ export class RoleService {
   constructor(private httpManager: HttpManager) {
   }
 
-  public getRolesByPage(page: number): Observable<DataBean> {
+  getRolesByPage(page: number): Observable<DataBean> {
     return this.httpManager.get('role/list', {page: page})
       .pipe(
         map(resp => resp.data)
       );
   }
 
-  deleteRoleById(roleId: any) {
+  deleteRoleById(roleId: any): Observable<ResultWrapper> {
     return this.httpManager.post(`role/delete/${roleId}`);
+  }
+
+  findAllModules(): Observable<any[]> {
+    return this.httpManager.get('role/modules')
+      .pipe(
+        map(resp => resp.data.items)
+      );
+  }
+
+  addRoleWithModuleIds(role: any): Observable<ResultWrapper> {
+    return this.httpManager.post('role/add', role);
   }
 }

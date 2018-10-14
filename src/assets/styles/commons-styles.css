@@ -22,3 +22,11 @@ body {
 ul, ol {
   list-style: none;
 }
+
+input, select {
+  border: 1px solid silver;
+  height: 30px;
+  line-height: 27px;
+  padding-left: 3px;
+}
+

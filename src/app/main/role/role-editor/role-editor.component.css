@@ -25,10 +25,10 @@ div.input_info {
   height: 40px;
 }
 
-div.input_info {
-  display: inline-block;
-  width: 50px;
-}
+/*div.input_info {*/
+  /*display: inline-block;*/
+  /*width: 50px;*/
+/*}*/
 
 div.input_info_scroll {
   width: 360px;
@@ -55,7 +55,7 @@ div.input_info_scroll li span {
   height: 22px;
 }
 
-div.input_info_scroll li  {
+div.input_info_scroll li input {
   height: 22px;
   line-height: 22px;
   margin-right: 3px;
@@ -76,4 +76,15 @@ div.button_info {
   text-align: left;
   width: 380px;
   /*border:1px solid blue;*/
+}
+
+input.btn_save
+{
+  width: 100px;
+  height: 36px;
+  line-height: 26px;
+  font-size: 20px;
+  font-family: "黑体";
+  text-align: center;
+  margin-right: 5px;
 }

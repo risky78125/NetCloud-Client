@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {RoleComponent} from './role.component';
-import {RoleUpdateComponent} from './role-update/role-update.component';
+import {RoleEditorComponent} from './role-editor/role-editor.component';
 
 const routes: Routes = [
   {path: '', component: RoleComponent},
-  {path: 'add', component: RoleUpdateComponent},
-  {path: 'modify', component: RoleUpdateComponent}
+  {path: 'add', component: RoleEditorComponent},
+  {path: 'modify', component: RoleEditorComponent}
 ];
 
 @NgModule({
