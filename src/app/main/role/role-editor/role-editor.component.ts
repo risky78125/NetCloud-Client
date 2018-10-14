@@ -3,7 +3,7 @@ import {RoleService} from '../role.service';
 import {from, of} from 'rxjs';
 import {filter, map, mergeMap, toArray} from 'rxjs/operators';
 import {ToastUtils} from '../../../commons/toast-utils';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-role-update',
@@ -21,6 +21,7 @@ export class RoleEditorComponent implements OnInit {
 
   constructor(
     private roleService: RoleService,
+    private router: Router,
     private route: ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
       const roleId = params.get('roleId');
@@ -63,10 +64,15 @@ export class RoleEditorComponent implements OnInit {
       .subscribe((resp) => {
         if (resp.status) {
           ToastUtils.toastSuccess(resp.message);
+          this.router.navigateByUrl('main/role');
         } else {
           ToastUtils.toastFailed(resp.message);
         }
       });
+  }
+
+  onCancelClick() {
+    this.router.navigateByUrl('main/role');
   }
 
 }
