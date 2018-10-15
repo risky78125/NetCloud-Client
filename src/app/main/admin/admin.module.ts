@@ -6,6 +6,7 @@ import { AdminComponent } from './admin.component';
 import {AdminService} from './admin.service';
 import {CommonsModule} from '../../commons/commons.module';
 import {FormsModule} from '@angular/forms';
+import { AdminEditorComponent } from './admin-editor/admin-editor.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     AdminRoutingModule
   ],
-  declarations: [AdminComponent],
+  declarations: [AdminComponent, AdminEditorComponent],
   providers: [AdminService]
 })
 export class AdminModule { }

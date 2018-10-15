@@ -13,7 +13,7 @@
       <div><label>角色：<input type="text" class="text_search width200" name="roleName" [(ngModel)]="params.roleName" /></label></div>
       <div><input type="button" value="搜索" class="btn_search" (click)="onSearchClick()"/></div>
       <input type="button" value="密码重置" class="btn_add" onclick="resetPwd();" />
-      <input type="button" value="增加" class="btn_add" onclick="location.href='admin_add.html';" />
+      <input type="button" value="增加" class="btn_add" routerLink="add" />
     </div>
     <!--数据区域：用表格展示数据-->
     <div class="data">
@@ -44,7 +44,7 @@
             <a class="summary" >{{admin.roleNames ? (admin.roleNames.length > 5 ? (admin.roleNames.substring(0, 5) + '...' ) : admin.roleNames) : ''}}</a>
           </td>
           <td class="td_modi">
-            <input type="button" value="修改" class="btn_modify" onclick="location.href='admin_modi.html';" />
+            <input type="button" value="修改" class="btn_modify" routerLink="modify/{{admin.adminId}}" />
             <input type="button" value="删除" class="btn_delete" onclick="deleteAdmin();" />
           </td>
         </tr>
