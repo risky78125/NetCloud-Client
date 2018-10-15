@@ -1,3 +1,56 @@
-<p>
-  admin works!
-</p>
+<div id="main">
+  <form action="" method="">
+    <!--查询-->
+    <div class="search_add">
+      <div>
+        <label for="selModules"></label>
+        模块：
+        <select id="selModules" class="select_search" name="moduleId" [(ngModel)]="params.moduleId">
+          <option value="0" selected>全部</option>
+          <option *ngFor="let module of modules" value="{{module.moduleId}}">{{module.moduleName}}</option>
+        </select>
+      </div>
+      <div><label>角色：<input type="text" class="text_search width200" name="roleName" [(ngModel)]="params.roleName" /></label></div>
+      <div><input type="button" value="搜索" class="btn_search" (click)="onSearchClick()"/></div>
+      <input type="button" value="密码重置" class="btn_add" onclick="resetPwd();" />
+      <input type="button" value="增加" class="btn_add" onclick="location.href='admin_add.html';" />
+    </div>
+    <!--数据区域：用表格展示数据-->
+    <div class="data">
+      <table id="datalist">
+        <tr>
+          <th class="th_select_all">
+            <input type="checkbox" onclick="selectAdmins(this);" />
+            <span>全选</span>
+          </th>
+          <th>管理员ID</th>
+          <th>姓名</th>
+          <th>登录名</th>
+          <th>电话</th>
+          <th>电子邮件</th>
+          <th>授权日期</th>
+          <th class="width100">拥有角色</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let admin of dataSource">
+          <td><input type="checkbox" /></td>
+          <td>{{admin.adminId}}</td>
+          <td>{{admin.adminName}}</td>
+          <td>{{admin.adminCode}}</td>
+          <td>{{admin.telephone}}</td>
+          <td>{{admin.email}}</td>
+          <td>{{admin.enrolldate}}</td>
+          <td>
+            <a class="summary" >{{admin.roleNames ? (admin.roleNames.length > 5 ? (admin.roleNames.substring(0, 5) + '...' ) : admin.roleNames) : ''}}</a>
+          </td>
+          <td class="td_modi">
+            <input type="button" value="修改" class="btn_modify" onclick="location.href='admin_modi.html';" />
+            <input type="button" value="删除" class="btn_delete" onclick="deleteAdmin();" />
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--分页-->
+    <app-page-indicator [totalCount]="totalCount" (pageSelected)="onPageSelected($event)"></app-page-indicator>
+  </form>
+</div>

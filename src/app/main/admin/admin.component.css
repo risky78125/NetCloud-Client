@@ -1,0 +1,53 @@
+div.search_add {
+  width: 910px;
+  height: 30px;
+  text-align: right;
+  margin-top: 3px;
+
+}
+
+div.search_add div {
+  float: left;
+  margin-right: 18px;
+  line-height: 23px;
+}
+
+div.search_add span {
+  margin-left: 5px;
+}
+
+input.text_search, select.select_search {
+  height: 23px;
+  line-height: 23px;
+  margin-left: 0px;
+}
+
+input.btn_search {
+  height: 26px;
+  line-height: 26px;
+  width: 74px;
+  padding-left: 13px;
+  margin-left: 3px;
+}
+
+input.btn_search:hover {
+  font-weight: bold;
+}
+
+input.btn_add {
+  height: 26px;
+  line-height: 26px;
+  width: 71px;
+  text-align: center;
+  overflow: hidden;
+  padding-left: 0px;
+}
+
+a.summary {
+  cursor: default;
+  color: gray;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  line-height: 100%;
+}
