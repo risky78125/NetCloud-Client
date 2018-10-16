@@ -24,7 +24,7 @@ export class RoleService {
   }
 
   findAllModules(): Observable<any[]> {
-    return this.httpManager.get('role/modules')
+    return this.httpManager.get('module/common/list')
       .pipe(
         map(resp => resp.data.items)
       );

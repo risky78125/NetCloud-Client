@@ -16,7 +16,7 @@ export class AdminService {
   }
 
   getModules(): Observable<ResultWrapper> {
-    return this.httpManager.get('role/modules');
+    return this.httpManager.get('module/common/list');
   }
 }
 
