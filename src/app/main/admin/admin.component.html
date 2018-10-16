@@ -45,7 +45,7 @@
           </td>
           <td class="td_modi">
             <input type="button" value="修改" class="btn_modify" routerLink="modify/{{admin.adminId}}" />
-            <input type="button" value="删除" class="btn_delete" onclick="deleteAdmin();" />
+            <input type="button" value="删除" class="btn_delete" (click)="onDeleteClick(admin)" />
           </td>
         </tr>
       </table>

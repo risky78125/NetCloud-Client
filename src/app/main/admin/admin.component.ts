@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AdminService} from './admin.service';
 import {ToastUtils} from '../../commons/toast-utils';
+import {of} from 'rxjs';
+import {mergeMap} from 'rxjs/operators';
+import {DialogUtils} from '../../commons/DialogUtils';
 
 @Component({
   selector: 'app-admin',
@@ -32,6 +35,20 @@ export class AdminComponent implements OnInit {
   onSearchClick() {
     console.log(this.params);
     this.getAllAdmin();
+  }
+
+  onDeleteClick(admin) {
+    DialogUtils.confirm('确定删除?', admin.adminCode)
+      .pipe(
+        mergeMap(() => this.adminService.deleteById(admin.adminId))
+      ).subscribe(resp => {
+      if (resp.status) {
+        ToastUtils.toastSuccess('删除成功');
+        this.getAllAdmin();
+      } else {
+        ToastUtils.toastFailed('删除失败');
+      }
+    });
   }
 
   onPageSelected(pageIndex) {

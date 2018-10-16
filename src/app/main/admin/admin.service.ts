@@ -34,6 +34,10 @@ export class AdminService {
   updateAdmin(adminBody: any): Observable<ResultWrapper> {
     return this.httpManager.post('admin/modify', adminBody);
   }
+
+  deleteById(adminId: number): Observable<ResultWrapper> {
+    return this.httpManager.post(`admin/delete/${adminId}`);
+  }
 }
 
 export class AdminParams {
