@@ -18,6 +18,22 @@ export class AdminService {
   getModules(): Observable<ResultWrapper> {
     return this.httpManager.get('module/common/list');
   }
+
+  getRoles(): Observable<ResultWrapper> {
+    return this.httpManager.get('role/common/list');
+  }
+
+  getAdminDetailsById(adminId: number): Observable<ResultWrapper> {
+    return this.httpManager.get(`admin/details/${adminId}`);
+  }
+
+  addAdmin(adminBody: any): Observable<ResultWrapper> {
+    return this.httpManager.post('admin/add', adminBody);
+  }
+
+  updateAdmin(adminBody: any): Observable<ResultWrapper> {
+    return this.httpManager.post('admin/modify', adminBody);
+  }
 }
 
 export class AdminParams {
